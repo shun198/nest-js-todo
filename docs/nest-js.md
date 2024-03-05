@@ -18,6 +18,7 @@
   - The root module of the application.
 - app.service.ts
   - A basic service with a single method.
-  - Djangoでいうviewに該当するもの
+  - Django でいう view に該当するもの
+  - API のロジックを記載する
 - main.ts
   - The entry file of the application which uses the core function NestFactory to create a Nest application instance.

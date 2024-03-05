@@ -5,12 +5,12 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const config = new DocumentBuilder()
-    .setTitle('Report API Project')
-    .setDescription('The Report API description')
+    .setTitle('Todo API Project')
+    .setDescription('Todo API description')
     .setVersion('1.0')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api/docs', app, document);
-  await app.listen(3000);
+  await app.listen(8000);
 }
 bootstrap();

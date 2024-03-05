@@ -12,3 +12,9 @@ down:
 
 run:
 	docker-compose exec app npm run start:dev
+
+migrate:
+	docker-compose exec app npx prisma migrate dev
+
+studio:
+	docker-compose exec app npx prisma studio

@@ -27,9 +27,8 @@ services:
       dockerfile: containers/node/Dockerfile
     volumes:
       - ./application:/code
-      - node_modules_volume:/app/node_modules
     ports:
-      - '3000:3000'
+      - '5555:5555'
       - '8000:8000'
     command: sh -c "/usr/local/bin/entrypoint.sh"
     stdin_open: true
@@ -41,4 +40,4 @@ services:
         condition: service_healthy
 volumes:
   db_data:
-  node_modules_volume:
+
