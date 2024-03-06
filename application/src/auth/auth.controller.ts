@@ -8,7 +8,11 @@ import {
   Req,
   Get,
 } from '@nestjs/common';
-import { ApiOperation } from '@nestjs/swagger';
+import {
+  ApiCreatedResponse,
+  ApiForbiddenResponse,
+  ApiOperation,
+} from '@nestjs/swagger';
 import { Request, Response } from 'express';
 import { AuthService } from './auth.service';
 import { AuthDto } from './dto/auth.dto';
@@ -25,6 +29,22 @@ export class AuthController {
 
   @Post('signup')
   @ApiOperation({ summary: '会員登録' })
+  @ApiCreatedResponse({
+    description: 'ユーザの会員登録に成功したとき',
+    schema: {
+      example: { message: 'ok' },
+    },
+  })
+  @ApiForbiddenResponse({
+    description: 'すでに同じメールアドレスを持つユーザが存在するとき',
+    schema: {
+      example: {
+        message: 'This email is already taken',
+        error: 'Forbidden',
+        statusCode: 403,
+      },
+    },
+  })
   signUp(@Body() dto: AuthDto): Promise<Msg> {
     return this.authService.signUp(dto);
   }
@@ -43,7 +63,7 @@ export class AuthController {
       path: '/',
     });
     return {
-      message: 'ok',
+      message: 'ログインに成功しました',
     };
   }
 
