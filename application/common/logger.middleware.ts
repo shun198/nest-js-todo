@@ -10,7 +10,7 @@ export class LoggerMiddleware implements NestMiddleware {
     const { ip, method, originalUrl } = request;
     response.on('finish', () => {
       const { statusCode } = response;
-
+      // ログレベル、ハンドラー名、時刻、ログIDを追加したい
       this.logger.log(`${ip} ${method} ${originalUrl} ${statusCode}`);
     });
     next();
