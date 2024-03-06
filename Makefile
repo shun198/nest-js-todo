@@ -18,3 +18,10 @@ migrate:
 
 studio:
 	docker-compose exec app npx prisma studio
+
+lint:
+	docker-compose exec app npm run lint
+
+seed:
+	docker-compose exec app npx prisma db seed
+
