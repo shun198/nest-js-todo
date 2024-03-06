@@ -12,12 +12,14 @@ import {
   ApiCreatedResponse,
   ApiForbiddenResponse,
   ApiOperation,
+  ApiTags,
 } from '@nestjs/swagger';
 import { Request, Response } from 'express';
 import { AuthService } from './auth.service';
 import { AuthDto } from './dto/auth.dto';
 import { Csrf, Msg } from './interfaces/auth.interface';
 
+@ApiTags('auth')
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
