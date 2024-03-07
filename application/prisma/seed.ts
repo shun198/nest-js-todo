@@ -7,11 +7,11 @@ async function main() {
     create: {
       email: 'alice@prisma.io',
       nickName: 'Alice',
-      hashedPassword: 'test',
+      hashedPassword: '$2b$12$tg885CjGIz1qs1nN2KFmlu6XdEPc.ucVzx4dwe9thxqL/rpaqWY9C',
       tasks: {
         create: {
-          title: 'Check out Prisma with Next.js',
-          description: 'https://www.prisma.io/nextjs',
+          title: '懸垂',
+          description: '広背筋と大円筋を鍛える種目',
         },
       },
     },

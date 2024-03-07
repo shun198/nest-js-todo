@@ -4,20 +4,6 @@
     // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        // {
-        //     "name": "Launch to Node",
-        //     "type": "node",
-        //     "request": "launch",
-        //     "runtimeExecutable": "npm",
-        //     "cwd": "${workspaceFolder}",
-        //     "runtimeArgs": [
-        //         "run",
-        //         "start:debug",
-        //         "--",
-        //         "--debug-brk=9229",
-        //     ],
-        //     "console": "integratedTerminal",
-        // }
         {
             "type": "node",
             "request": "attach",
